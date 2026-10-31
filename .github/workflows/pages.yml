@@ -1,0 +1,46 @@
+name: Deploy game to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # Pages открывает index.html. Если главный файл назван иначе
+      # (например, not_my_type.html), делаем копию под именем index.html.
+      - name: Prepare site
+        run: |
+          mkdir _site
+          cp -r dist/. _site/
+          if [ ! -f _site/index.html ]; then
+            first=$(ls _site/*.html | head -n 1)
+            cp "$first" _site/index.html
+          fi
+          # Свой домен: раскомментируйте и впишите домен
+          # echo "game.example.com" > _site/CNAME
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
