@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Не мой тип</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Tiny5&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="game">
+      <canvas id="cv" width="320" height="180"></canvas>
+      <div id="fant"></div>
+      <div id="cg" class="hide">
+        <div class="cgf">
+          <img id="cgimg" alt="" />
+          <div id="cgcap"></div>
+        </div>
+      </div>
+      <div id="hud" class="ui hide"></div>
+      <div id="pops"></div>
+      <div id="top" class="ui hide">
+        <button data-a="auto">▶ АВТО</button>
+        <button data-a="skip">⏩ СКИП</button>
+        <button data-a="log">📜</button>
+        <button data-a="stats">📊</button>
+        <button data-a="save">💾</button>
+        <button data-a="pause">☰</button>
+      </div>
+      <div id="phone" class="hide">
+        <div class="ph-top">
+          <span id="ph-clock">23:41</span>
+          <span class="ph-isl"></span>
+          <span>LTE ▮▮▮</span>
+        </div>
+        <div class="ph-head">
+          <div id="ph-ava">🌸</div>
+          <div>
+            <b id="ph-name"></b>
+            <small id="ph-st"></small>
+          </div>
+        </div>
+        <div id="ph-msgs"></div>
+        <div class="ph-in">
+          <span id="ph-draft">Сообщение</span>
+          <i>➤</i>
+        </div>
+      </div>
+      <div id="dlg" class="hide">
+        <div id="por">
+          <img id="pimg" alt="" />
+          <canvas id="pcan" width="48" height="48"></canvas>
+        </div>
+        <div id="dbody">
+          <div id="dname"></div>
+          <div id="dtext"></div>
+          <div id="darr">▼</div>
+        </div>
+      </div>
+      <div id="choices" class="ui hide"></div>
+      <div id="split" class="hide">
+        <div class="spa">
+          <small>ЧТО ОН УСЛЫШАЛ</small>
+          <p id="sp-a"></p>
+        </div>
+        <div class="spb">
+          <small>ЧТО ОНА СКАЗАЛА</small>
+          <p id="sp-b"></p>
+        </div>
+      </div>
+      <div id="mini" class="ui hide"></div>
+      <div id="fx"></div>
+      <div id="stamp"></div>
+      <div id="card" class="hide">
+        <div id="card-a"></div>
+        <div id="card-b"></div>
+      </div>
+      <div id="menu" class="ui">
+        <div class="logo">
+          НЕ МОЙ ТИП
+          <small>визуальная новелла о френдзоне, кринже и росте</small>
+        </div>
+        <div class="mbs">
+          <button class="mb hot" id="m-new">▶ Новая игра</button>
+          <button class="mb" id="m-cont">Продолжить</button>
+          <button class="mb" id="m-chap">Главы</button>
+          <button class="mb" id="m-load">Загрузить</button>
+          <button class="mb" id="m-ends">Концовки</button>
+          <button class="mb" id="m-set">Настройки</button>
+        </div>
+        <div class="mfooter-pr">
+          a DBproduction theNotMyType © 2026
+        </div>
+        <div class="mfoot">
+          РАНХиГС НИУ · Нижний Новгород · осень · 18+ (мат) · все совпадения не случайны
+        </div>
+      </div>
+      <div id="epi" class="hide"></div>
+      <div id="ending" class="ui hide"></div>
+      <div id="modal" class="ui hide">
+        <div class="mbox pf">
+          <div class="mhead">
+            <b id="mtitle"></b>
+            <button id="mclose">✕</button>
+          </div>
+          <div id="mbody"></div>
+        </div>
+      </div>
+      <div id="fade"></div>
+      <div id="crt"></div>
+      <div id="toast"></div>
+    </div>
+    <div id="rot">↻ Поверни телефон горизонтально</div>
+    <script src="imgs.js"></script>
+    <script src="aka3000.js"></script>
+  </body>
+</html>
